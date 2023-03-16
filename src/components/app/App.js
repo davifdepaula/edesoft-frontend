@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { UserProvider } from "../../context/authContext";
+// import { UserProvider } from "../../context/authContext";
 import ResetStyle from "../../resetstyle"
-import Home from "../pages/home";
-import Login from "../pages/login"
-import SignUP from "../pages/sign-up";
+import Home from "../../pages/home";
+import SignUP from "../../pages/sign-up";
+import Update from "../../pages/update";
 import GlobalStyle  from "./style"
 
 function App() {
@@ -11,15 +11,13 @@ function App() {
     <>
       <ResetStyle />
       <GlobalStyle />
-      <UserProvider>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element = {<Login />} />
+          <Route path='/' element = {<Home />} />
           <Route path='/cadastro' element = {<SignUP />} />
-          <Route path='/home' element = {<Home />} />
+          <Route path='/atualizar/:id' element = {<Update />} />
         </Routes>
       </BrowserRouter>
-      </UserProvider>
     </>
   )
 }
